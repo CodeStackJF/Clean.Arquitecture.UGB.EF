@@ -1,0 +1,15 @@
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\bin\Debug\net9.0\UGB.Application.deps.json
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\bin\Debug\net9.0\UGB.Application.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\bin\Debug\net9.0\UGB.Application.pdb
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\bin\Debug\net9.0\UGB.Domain.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\bin\Debug\net9.0\UGB.Domain.pdb
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\UGB.Application.csproj.AssemblyReference.cache
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\UGB.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\UGB.Application.AssemblyInfoInputs.cache
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\UGB.Application.AssemblyInfo.cs
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\UGB.Application.csproj.CoreCompileInputs.cache
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\UGB.Appl.17C59D32.Up2Date
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\UGB.Application.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\refint\UGB.Application.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\UGB.Application.pdb
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\ref\UGB.Application.dll

@@ -1,0 +1,17 @@
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\bin\Debug\net9.0\UGB.Infrastructure.deps.json
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\bin\Debug\net9.0\UGB.Infrastructure.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\bin\Debug\net9.0\UGB.Infrastructure.pdb
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\bin\Debug\net9.0\UGB.Application.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\bin\Debug\net9.0\UGB.Domain.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\bin\Debug\net9.0\UGB.Application.pdb
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\bin\Debug\net9.0\UGB.Domain.pdb
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\UGB.Infrastructure.csproj.AssemblyReference.cache
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\UGB.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\UGB.Infrastructure.AssemblyInfoInputs.cache
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\UGB.Infrastructure.AssemblyInfo.cs
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\UGB.Infrastructure.csproj.CoreCompileInputs.cache
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\UGB.Infr.5AC03B62.Up2Date
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\UGB.Infrastructure.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\refint\UGB.Infrastructure.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\UGB.Infrastructure.pdb
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\ref\UGB.Infrastructure.dll
