@@ -13,7 +13,7 @@ namespace UGB.Services.Controllers
     [ApiController]
     [Route("[controller]")]
     //[Authorize(Policy = "HeaderToken")]
-    [Authorize]
+    //[Authorize]
     public class CarrerasController:ControllerBase
     {
         private readonly IRaCarrerasRepository raCarrerasRepository;

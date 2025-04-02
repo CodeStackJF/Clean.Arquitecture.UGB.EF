@@ -11,8 +11,7 @@
           "Microsoft.EntityFrameworkCore": "9.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.3",
           "Microsoft.Extensions.Configuration": "9.0.3",
-          "UGB.Application": "1.0.0",
-          "UGB.Domain": "1.0.0"
+          "UGB.Application": "1.0.0"
         },
         "runtime": {
           "UGB.Infrastructure.dll": {}

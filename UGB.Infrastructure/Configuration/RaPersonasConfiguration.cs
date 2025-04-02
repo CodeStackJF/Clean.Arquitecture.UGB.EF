@@ -10,6 +10,8 @@ namespace UGB.Infrastructure.Configuration
         {
             builder.HasKey(x=>x.per_codigo);
             builder.HasOne(x=>x.ra_pla_planes).WithMany().HasForeignKey(x=>x.per_codpla);
+            builder.Property(x=>x.per_apellidos_nombres).HasComputedColumnSql();
+            builder.Property(x=>x.per_nombres_apellidos).HasComputedColumnSql();
         }
 
     }

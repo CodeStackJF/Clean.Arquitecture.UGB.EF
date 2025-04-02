@@ -214,9 +214,6 @@
             "projectReferences": {
               "D:\\GIT\\CSHARP\\Clean.Arquitecture.UGB.EF\\UGB.Application\\UGB.Application.csproj": {
                 "projectPath": "D:\\GIT\\CSHARP\\Clean.Arquitecture.UGB.EF\\UGB.Application\\UGB.Application.csproj"
-              },
-              "D:\\GIT\\CSHARP\\Clean.Arquitecture.UGB.EF\\UGB.Domain\\UGB.Domain.csproj": {
-                "projectPath": "D:\\GIT\\CSHARP\\Clean.Arquitecture.UGB.EF\\UGB.Domain\\UGB.Domain.csproj"
               }
             }
           }

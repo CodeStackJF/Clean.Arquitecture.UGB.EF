@@ -9,3 +9,4 @@ D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Domain\obj\Debug\net9.0\UGB.Domain.d
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Domain\obj\Debug\net9.0\refint\UGB.Domain.dll
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Domain\obj\Debug\net9.0\UGB.Domain.pdb
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Domain\obj\Debug\net9.0\ref\UGB.Domain.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Domain\obj\Debug\net9.0\UGB.Domain.sourcelink.json

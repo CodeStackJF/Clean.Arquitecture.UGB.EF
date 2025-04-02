@@ -15,3 +15,4 @@ D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\UGB.
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\refint\UGB.Infrastructure.dll
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\UGB.Infrastructure.pdb
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\ref\UGB.Infrastructure.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Infrastructure\obj\Debug\net9.0\UGB.Infrastructure.sourcelink.json

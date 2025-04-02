@@ -1,11 +1,5 @@
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SignalR;
-using UGB.Application.Data;
-using UGB.Application.Helper;
 using UGB.Domain.Interfaces;
-using UGB.Services.Helper;
 namespace UGB.Services.Hubs
 {
     //[Authorize]

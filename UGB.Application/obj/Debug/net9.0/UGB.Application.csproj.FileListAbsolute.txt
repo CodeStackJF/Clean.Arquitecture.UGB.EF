@@ -13,3 +13,4 @@ D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\UGB.App
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\refint\UGB.Application.dll
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\UGB.Application.pdb
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\ref\UGB.Application.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Application\obj\Debug\net9.0\UGB.Application.sourcelink.json

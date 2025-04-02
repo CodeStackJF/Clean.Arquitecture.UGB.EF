@@ -8,10 +8,11 @@ using UGB.Domain.Interfaces;
 using UGB.Application.Helper;
 using UGB.Application.Exceptions;
 using FluentValidation.Results;
+using UGB.Domain.Wrapper;
 namespace UGB.Services.Controllers
 {
     [ApiController]
-    [Authorize]
+    //[Authorize]
     [Route("[controller]")]
     public class EstudiantesController : ControllerBase
     {
@@ -25,9 +26,11 @@ namespace UGB.Services.Controllers
             mapper = _mapper;
         }
 
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(int? currentPage, string searchTerm = "")
         {
-            return Ok(await raPersonasRepository.GetAll());
+            var response = await raPersonasRepository.GetAllPaged(currentPage ?? 1, searchTerm);
+            PagedResult<EstudianteDTO> paged = mapper.Map<PagedResult<EstudianteDTO>>(response);
+            return Ok(paged);
         }
 
         [HttpGet("{id}")]
@@ -48,6 +51,11 @@ namespace UGB.Services.Controllers
             if(estudiante.per_dui.Length < 10)
             {
                 throw new CustomValidationException(nameof(estudiante.per_dui), "El DUI debe ser de al menos 10 caracteres.");
+            }
+
+            if(await raPersonasRepository.ExistsCarnet(estudiante.per_codigo, estudiante.per_carnet))
+            {
+                throw new HttpRequestException("Ya existe un estudiante con este carnet.");
             }
             await raPersonasRepository.Create(estudiante);
             return Created($"/estudiantes/{estudiante.per_codigo}", estudiante);

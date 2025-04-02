@@ -51,7 +51,6 @@ namespace UGB.Infrastructure.Repositories
             return (await ctx.ra_car_carreras.Include(x=>x.ra_pla_planes).Where(x=>x.car_codigo == id).FirstOrDefaultAsync())!;
         }
 
-
         public async Task<IEnumerable<ra_car_carreras>> Search(string searchTerm)
         {
             return await ctx.ra_car_carreras.Where(x=>x.car_nombre.Contains(searchTerm)).ToListAsync();
@@ -60,7 +59,7 @@ namespace UGB.Infrastructure.Repositories
         public async Task<bool> Update(int id, ra_car_carreras carrera)
         {
             ctx.ra_car_carreras.Update(carrera);
-            return await ctx.SaveChangesAsync() == 1;
+            return await ctx.SaveChangesAsync() > 0;
         }
 
         public async Task Delete(int id)

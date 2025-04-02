@@ -40,7 +40,7 @@ namespace UGB.Infrastructure.Repositories
         public async Task<bool> Update(int id, ra_ins_inscripcion ciclo)
         {
             ctx.ra_ins_inscripcion.Update(ciclo);
-            return await ctx.SaveChangesAsync() == 1;
+            return await ctx.SaveChangesAsync() > 1;
         }
 
     }

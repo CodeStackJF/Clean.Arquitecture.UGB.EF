@@ -1,6 +1,7 @@
 using AutoMapper;
 using UGB.Application.DTO;
 using UGB.Domain.Entities;
+using UGB.Domain.Wrapper;
 
 namespace UGB.Application.Mapper
 {
@@ -19,6 +20,8 @@ namespace UGB.Application.Mapper
             CreateMap<users, UserDTO>()
             .ForMember(d=>d.username, s => s.MapFrom(e=>e.username))
             .ReverseMap();
+
+            CreateMap<PagedResult<ra_per_personas>, PagedResult<EstudianteDTO>>().ReverseMap();
         }
     }
 }

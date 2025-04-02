@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using UGB.Application.Data;
 using UGB.Domain.Entities;
 using UGB.Domain.Interfaces;
@@ -14,12 +15,14 @@ namespace UGB.Infrastructure.Repositories
         
         public async Task<ra_plm_planes_materias> Create(ra_plm_planes_materias plan)
         {
-            throw new NotImplementedException();
+            ctx.ra_plm_planes_materias.Add(plan);
+            await ctx.SaveChangesAsync();
+            return plan;
         }
 
         public async Task<ra_plm_planes_materias> Get(int codpla, string codmat)
         {
-            throw new NotImplementedException();
+            return (await ctx.ra_plm_planes_materias.Include(x=>x.ra_mat_materias).Include(x=>x.ra_pla_planes).Where(x=>x.plm_codpla == codpla && x.plm_codmat == codmat).FirstOrDefaultAsync())!;
         }
 
         public async Task<IEnumerable<ra_plm_planes_materias>> GetAll()

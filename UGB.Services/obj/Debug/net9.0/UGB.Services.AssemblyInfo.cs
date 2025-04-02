@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UGB.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36362da24a63ab48c347c3ceb202954472b9a2cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("UGB.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UGB.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

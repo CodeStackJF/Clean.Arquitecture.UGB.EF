@@ -1,5 +1,9 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using UGB.Application.Data;
+using UGB.Application.DTO;
+using UGB.Domain.Wrapper;
 using UGB.Domain.Entities;
 using UGB.Domain.Interfaces;
 
@@ -8,9 +12,15 @@ namespace UGB.Infrastructure.Repositories
     public class RaPersonasRepository : IRaPersonasRepository
     {
         private readonly IApplicationDbContext ctx;
-        public RaPersonasRepository(IApplicationDbContext _ctx)
+        private readonly IConfiguration config;
+        private readonly int RECORDS_PER_PAGE;
+        private readonly IMapper mapper;
+        public RaPersonasRepository(IApplicationDbContext _ctx, IConfiguration _config, IMapper _mapper)
         {
             ctx = _ctx;
+            config = _config;
+            RECORDS_PER_PAGE = Convert.ToInt32(config.GetSection("RECORDS_PER_PAGE").Value);
+            mapper = _mapper;
         }
         
         public async Task<ra_per_personas> Create(ra_per_personas estudiante)
@@ -25,14 +35,50 @@ namespace UGB.Infrastructure.Repositories
             return (await ctx.ra_per_personas.Where(x=>x.per_codigo == id).FirstOrDefaultAsync())!;
         }
 
-        public async Task<IEnumerable<ra_per_personas>> GetAll()
+        public async Task<IEnumerable<ra_per_personas>> GetAll(string searchTerm)
         {
-            return await ctx.ra_per_personas.ToListAsync();
+            if(!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return await ctx.ra_per_personas
+                                .Where(
+                                    x=>
+                                    x.per_carnet.Contains(searchTerm) ||
+                                    x.per_nombres.Contains(searchTerm) ||
+                                    x.per_apellidos.Contains(searchTerm) ||
+                                    x.per_nombres_apellidos.Contains(searchTerm) ||
+                                    x.per_apellidos_nombres.Contains(searchTerm)
+                                )
+                                .ToListAsync();
+            }
+            else
+                return await ctx.ra_per_personas.AsNoTracking().ToListAsync();
+        }
+
+        public async Task<PagedResult<ra_per_personas>> GetAllPaged(int pageNumber, string searchTerm)
+        {
+            IQueryable<ra_per_personas> query = ctx.ra_per_personas.Include(x=>x.ra_pla_planes.ra_car_carreras)
+                                .Where(
+                                    x=>
+                                    x.per_carnet.Contains(searchTerm) ||
+                                    x.per_nombres.Contains(searchTerm) ||
+                                    x.per_apellidos.Contains(searchTerm) ||
+                                    x.per_nombres_apellidos.Contains(searchTerm) ||
+                                    x.per_apellidos_nombres.Contains(searchTerm)
+                                );
+            int total = await query.CountAsync();
+            int pages = (int)Math.Ceiling((decimal)total / RECORDS_PER_PAGE);
+            var response = new PagedResult<ra_per_personas>();
+            response.totalRecords = total;
+            response.currentPage = pageNumber;
+            response.pageSize = RECORDS_PER_PAGE;
+            response.pageCount = pages;
+            response.records = await query.Skip((pageNumber-1) * RECORDS_PER_PAGE).Take(RECORDS_PER_PAGE).AsNoTracking().ToListAsync();
+            return response;
         }
 
         public async Task<IEnumerable<ra_per_personas>> Search(string searchTerm)
         {
-            return await ctx.ra_per_personas.Where(x=>x.per_nombres.Contains(searchTerm) || x.per_apellidos.Contains(searchTerm) || x.per_carnet.Contains(searchTerm)).ToListAsync();
+            return await ctx.ra_per_personas.Where(x=>x.per_nombres.Contains(searchTerm) || x.per_apellidos.Contains(searchTerm) || x.per_carnet.Contains(searchTerm)).AsNoTracking().ToListAsync();
         }
 
         public async Task<bool> Update(int id, ra_per_personas estudiante)
@@ -48,7 +94,7 @@ namespace UGB.Infrastructure.Repositories
 
         public async Task<ra_per_personas> GetWithNestedData(int id)
         {
-            return (await ctx.ra_per_personas.Include(x=>x.ra_pla_planes.ra_car_carreras).Where(x=>x.per_codigo == id).FirstOrDefaultAsync())!;
+            return (await ctx.ra_per_personas.Include(x=>x.ra_pla_planes.ra_car_carreras).Where(x=>x.per_codigo == id).AsNoTracking().FirstOrDefaultAsync())!;
         }
     }
 }
