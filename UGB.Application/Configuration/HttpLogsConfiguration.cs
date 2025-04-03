@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UGB.Domain.Entities;
 
-namespace UGB.Infrastructure.Configuration
+namespace UGB.Application.Configuration
 {
     public class HttpLogsConfiguration : IEntityTypeConfiguration<http_logs>
     {

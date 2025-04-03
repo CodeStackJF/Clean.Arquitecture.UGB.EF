@@ -11,6 +11,5 @@ namespace UGB.Infrastructure.Configuration
             builder.HasKey(x=>x.mat_codigo);
             builder.Property(x=>x.mat_codigo).ValueGeneratedNever();
         }
-
     }
 }

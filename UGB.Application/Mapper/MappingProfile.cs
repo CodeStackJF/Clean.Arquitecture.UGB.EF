@@ -13,6 +13,7 @@ namespace UGB.Application.Mapper
             .ForMember(d => d.Id, s => s.MapFrom(e => e.per_codigo))
             .ForMember(d => d.Nombre, s => s.MapFrom(e => e.per_nombres))
             .ForMember(d => d.Apellido, s => s.MapFrom(e => e.per_apellidos))
+            .ForMember(d => d.Carnet, s => s.MapFrom(e => e.per_carnet))
             .ForMember(d => d.Carrera, s => s.MapFrom(e => e.ra_pla_planes.ra_car_carreras.car_nombre))
             .ForMember(d => d.Plan, s => s.MapFrom(e => e.ra_pla_planes.pla_nombre))
             .ReverseMap();

@@ -97,3 +97,6 @@ D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\Swashbuckl
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\Newtonsoft.Json.dll
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\System.Net.WebSockets.WebSocketProtocol.dll
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\obj\Debug\net9.0\UGB.Services.sourcelink.json
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\MailKit.dll
+D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\MimeKit.dll

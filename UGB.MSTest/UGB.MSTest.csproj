@@ -16,4 +16,9 @@
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UGB.Infrastructure\UGB.Infrastructure.csproj" />
+    <ProjectReference Include="..\UGB.Services\UGB.Services.csproj" />
+  </ItemGroup>
+
 </Project>

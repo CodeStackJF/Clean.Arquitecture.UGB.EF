@@ -9,6 +9,7 @@ using UGB.Application.Helper;
 using UGB.Application.Exceptions;
 using FluentValidation.Results;
 using UGB.Domain.Wrapper;
+using UGB.Services.Interfaces;
 namespace UGB.Services.Controllers
 {
     [ApiController]
@@ -19,11 +20,13 @@ namespace UGB.Services.Controllers
         private readonly IRaPersonasRepository raPersonasRepository;
         private readonly IValidator<ra_per_personas> validatorPersonas;
         private readonly IMapper mapper;
-        public EstudiantesController(IRaPersonasRepository _raPersonasRepository, IValidator<ra_per_personas> _validatorPersonas, IMapper _mapper)
+        private readonly IEmailService emailService;
+        public EstudiantesController(IRaPersonasRepository _raPersonasRepository, IValidator<ra_per_personas> _validatorPersonas, IMapper _mapper, IEmailService _emailService)
         {
             raPersonasRepository = _raPersonasRepository;
             validatorPersonas = _validatorPersonas;
             mapper = _mapper;
+            emailService = _emailService;
         }
 
         public async Task<IActionResult> Get(int? currentPage, string searchTerm = "")
@@ -47,7 +50,12 @@ namespace UGB.Services.Controllers
             /*IEnumerable<ValidationFailure> failures = new List<ValidationFailure>();
             failures.Append(new ValidationFailure(){ PropertyName = nameof(estudiante.per_dui), ErrorMessage = "El DUI debe ser de al menos 10 caracteres." });
             throw new CustomValidationException(failures);*/
-
+             await emailService.SendMail(new EmailDTO(){
+                To = "jose.jairo.fuentes@gmail.com",
+                Body = "Hola Mundo",
+                Subject = "Hola"            
+            });
+            return Ok();
             if(estudiante.per_dui.Length < 10)
             {
                 throw new CustomValidationException(nameof(estudiante.per_dui), "El DUI debe ser de al menos 10 caracteres.");
@@ -58,6 +66,7 @@ namespace UGB.Services.Controllers
                 throw new HttpRequestException("Ya existe un estudiante con este carnet.");
             }
             await raPersonasRepository.Create(estudiante);
+           
             return Created($"/estudiantes/{estudiante.per_codigo}", estudiante);
         }
     }

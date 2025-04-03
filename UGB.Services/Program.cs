@@ -8,7 +8,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.IdentityModel.Tokens;
 using UGB.Application;
 using UGB.Infrastructure;
+using UGB.Services.Helper;
 using UGB.Services.Hubs;
+using UGB.Services.Interfaces;
 using UGB.Services.Middleware;
 namespace UGB.Services;
 
@@ -24,6 +26,8 @@ public class Program
 
         //Se agregan las dependencias
         builder.Services.AddInfraestructure(builder.Configuration).AddApplication();
+        builder.Services.ConfigureOptions<MailSettings>();
+        builder.Services.AddSingleton<IEmailService, EmailService>();
 
         //Directiva para omitir la validación de entidades anidadas
         builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true)
