@@ -65,13 +65,9 @@ namespace UGB.Infrastructure.Repositories
                                     x.per_nombres_apellidos.Contains(searchTerm) ||
                                     x.per_apellidos_nombres.Contains(searchTerm)
                                 );
-            int total = await query.CountAsync();
-            int pages = (int)Math.Ceiling((decimal)total / RECORDS_PER_PAGE);
-            var response = new PagedResult<ra_per_personas>();
-            response.totalRecords = total;
-            response.currentPage = pageNumber;
-            response.pageSize = RECORDS_PER_PAGE;
-            response.pageCount = pages;
+            int totalRecords = await query.CountAsync();
+            int totalPages = (int)Math.Ceiling((decimal)totalRecords / RECORDS_PER_PAGE);
+            var response = new PagedResult<ra_per_personas>(pageNumber, totalPages, RECORDS_PER_PAGE, totalRecords);
             response.records = await query.Skip((pageNumber-1) * RECORDS_PER_PAGE).Take(RECORDS_PER_PAGE).AsNoTracking().ToListAsync();
             return response;
         }
