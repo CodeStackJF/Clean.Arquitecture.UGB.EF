@@ -45,6 +45,7 @@ namespace UGB.Services.Controllers
 
             ClaimsIdentity claims = new ClaimsIdentity();
             claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.username));
+            claims.AddClaim(new Claim("Age", user.edad.ToString()));
 
             SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor()
             {
@@ -68,7 +69,8 @@ namespace UGB.Services.Controllers
         public async Task<IActionResult> LoginData()
         {
             return Ok(new {
-                user = User.GetProperty(ClaimTypes.NameIdentifier)
+                user = User.GetProperty(ClaimTypes.NameIdentifier),
+                age = User.GetProperty("Age", typeof(int))
             });
         }
     }

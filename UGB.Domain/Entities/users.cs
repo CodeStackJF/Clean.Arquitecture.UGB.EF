@@ -7,5 +7,6 @@ namespace UGB.Domain.Entities
         public bool active { get; set; }
         public string salt { get; set; }
         public string password { get; set; }
+        public int edad { get; set; }
     }
 }
