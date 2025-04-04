@@ -1,11 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using UGB.Domain.Entities;
-using UGB.Domain.Primitives;
 using UGB.Infrastructure.Interfaces;
 
 namespace UGB.Infrastructure
 {
-    public class ApplicationDbContext : DbContext, IUnitOfWork, IApplicationDbContext
+    public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {

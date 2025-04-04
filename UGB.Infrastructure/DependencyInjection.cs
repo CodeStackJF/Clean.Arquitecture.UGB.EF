@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using UGB.Domain.Interfaces;
-using UGB.Domain.Primitives;
 using UGB.Infrastructure.Interfaces;
 using UGB.Infrastructure.Repositories;
 
@@ -20,7 +19,6 @@ namespace UGB.Infrastructure
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("CleanArquitectureCTX")));
             services.AddScoped<IApplicationDbContext>(x=>x.GetRequiredService<ApplicationDbContext>());
-            services.AddScoped<IUnitOfWork>(x => x.GetRequiredService<ApplicationDbContext>());
             services.AddScoped<IRaCarrerasRepository, RaCarrerasRepository>();
             services.AddScoped<IRaCicloRepository, RaCicloRepository>();
             services.AddScoped<IRaHorariosRepository, RaHorariosRepository>();

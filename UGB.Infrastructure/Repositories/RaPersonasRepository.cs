@@ -13,13 +13,11 @@ namespace UGB.Infrastructure.Repositories
         private readonly IApplicationDbContext ctx;
         private readonly IConfiguration config;
         private readonly int RECORDS_PER_PAGE;
-        private readonly IMapper mapper;
-        public RaPersonasRepository(IApplicationDbContext _ctx, IConfiguration _config, IMapper _mapper)
+        public RaPersonasRepository(IApplicationDbContext _ctx, IConfiguration _config)
         {
             ctx = _ctx;
             config = _config;
             RECORDS_PER_PAGE = Convert.ToInt32(config.GetSection("RECORDS_PER_PAGE").Value);
-            mapper = _mapper;
         }
         
         public async Task<ra_per_personas> Create(ra_per_personas estudiante)
