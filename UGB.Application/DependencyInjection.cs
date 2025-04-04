@@ -24,6 +24,7 @@ namespace UGB.Application
             services.AddValidatorsFromAssemblyContaining<RaPlanesMateriasValidation>();
             services.AddValidatorsFromAssemblyContaining<RaPlanesValidation>();
             services.AddValidatorsFromAssemblyContaining<UsersValidation>();
+            services.AddValidatorsFromAssemblyContaining<EmailValidation>();
             services.AddAutoMapper(Assembly.GetAssembly(typeof(MappingProfile)));
             return services;
         }

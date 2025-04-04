@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using UGB.Domain.Entities;
 
-namespace UGB.Application.Data
+namespace UGB.Infrastructure.Interfaces
 {
     public interface IApplicationDbContext
     {

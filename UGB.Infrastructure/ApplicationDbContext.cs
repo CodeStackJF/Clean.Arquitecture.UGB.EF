@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using UGB.Application.Data;
 using UGB.Domain.Entities;
 using UGB.Domain.Primitives;
+using UGB.Infrastructure.Interfaces;
 
 namespace UGB.Infrastructure
 {

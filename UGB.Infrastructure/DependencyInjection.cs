@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using UGB.Application.Data;
 using UGB.Domain.Interfaces;
 using UGB.Domain.Primitives;
+using UGB.Infrastructure.Interfaces;
 using UGB.Infrastructure.Repositories;
 
 namespace UGB.Infrastructure

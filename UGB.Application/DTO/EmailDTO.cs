@@ -9,6 +9,5 @@ namespace UGB.Application.DTO
         public string? Subject { get; set; }
         public string? Body { get; set; }       
         public IEnumerable<MimePart> Attachments {get; set;} = new List<MimePart>();
-        
     }
 }

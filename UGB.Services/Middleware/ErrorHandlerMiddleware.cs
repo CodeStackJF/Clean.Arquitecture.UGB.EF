@@ -50,7 +50,7 @@ namespace UGB.Services.Middleware
             {
                 case SqlException e:
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    responseModel.Message = e.Message + " | " + (e.InnerException != null ? e.InnerException.Message:"");
+                    responseModel.Message = e.Message;
                     responseModel.StatusCode = 500;
                     break;
                 case CustomValidationException e:
@@ -60,7 +60,7 @@ namespace UGB.Services.Middleware
                     break;
                 case ValidationException e:
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    responseModel.Message = e.Message; //+ " | " + (e.InnerException != null ? e.InnerException.Message:"");
+                    responseModel.Message = e.Message;
                     responseModel.StatusCode = response.StatusCode;
                     break;
                 case KeyNotFoundException e:
@@ -75,7 +75,7 @@ namespace UGB.Services.Middleware
                     break;
                 case HttpRequestException e:
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    responseModel.Message = e.Message; //+ " | " + (e.InnerException != null ? e.InnerException.Message:"");
+                    responseModel.Message = e.Message;
                     responseModel.StatusCode = response.StatusCode;
                     break;
                 case NotFoundException e:

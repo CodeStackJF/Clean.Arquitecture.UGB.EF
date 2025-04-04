@@ -47,15 +47,6 @@ namespace UGB.Services.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ra_per_personas estudiante)
         {
-            /*IEnumerable<ValidationFailure> failures = new List<ValidationFailure>();
-            failures.Append(new ValidationFailure(){ PropertyName = nameof(estudiante.per_dui), ErrorMessage = "El DUI debe ser de al menos 10 caracteres." });
-            throw new CustomValidationException(failures);*/
-             await emailService.SendMail(new EmailDTO(){
-                To = "jose.jairo.fuentes@gmail.com",
-                Body = "Hola Mundo",
-                Subject = "Hola"            
-            });
-            return Ok();
             if(estudiante.per_dui.Length < 10)
             {
                 throw new CustomValidationException(nameof(estudiante.per_dui), "El DUI debe ser de al menos 10 caracteres.");
@@ -65,8 +56,8 @@ namespace UGB.Services.Controllers
             {
                 throw new HttpRequestException("Ya existe un estudiante con este carnet.");
             }
-            await raPersonasRepository.Create(estudiante);
-           
+
+            await raPersonasRepository.Create(estudiante);           
             return Created($"/estudiantes/{estudiante.per_codigo}", estudiante);
         }
     }

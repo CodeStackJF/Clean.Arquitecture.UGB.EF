@@ -66,7 +66,7 @@ namespace UGB.Services.Controllers
 
         [HttpGet]
         [Authorize]
-        public async Task<IActionResult> LoginData()
+        public IActionResult LoginData()
         {
             return Ok(new {
                 user = User.GetProperty(ClaimTypes.NameIdentifier),

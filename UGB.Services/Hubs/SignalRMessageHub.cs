@@ -1,8 +1,11 @@
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using UGB.Domain.Interfaces;
+using UGB.Services.Helper;
 namespace UGB.Services.Hubs
 {
-    //[Authorize]
+    [Authorize]
     public class SignalRMessageHub : Hub
     {
         private readonly ISignalRSessionsRepository signalRSessionsRepository;
@@ -13,14 +16,12 @@ namespace UGB.Services.Hubs
 
         public async Task SendMessageToUser(string user, string message)
         {
-            Console.WriteLine(user);
             await Clients.User(user).SendAsync("ReceiveMessage", message);
         }
 
         public override async Task OnConnectedAsync()
         {
-            //string userName = Context.User!.GetProperty(ClaimTypes.NameIdentifier);
-            string userName = "jairofu";
+            string userName = Context.User!.GetProperty(ClaimTypes.NameIdentifier);
             await signalRSessionsRepository.Insert(userName, true, Context.ConnectionId);
             await Clients.All.SendAsync("UserConnected", new {Context.ConnectionId, userName});
             await base.OnConnectedAsync();
@@ -28,8 +29,7 @@ namespace UGB.Services.Hubs
 
         public override async Task OnDisconnectedAsync(Exception? exception)
         {
-            //string userName = Context.User!.GetProperty(ClaimTypes.NameIdentifier);
-            string userName = "jairofu";
+            string userName = Context.User!.GetProperty(ClaimTypes.NameIdentifier);
             await signalRSessionsRepository.Insert(userName, false, Context.ConnectionId);
             await Clients.All.SendAsync("UserDisconnected", new {Context.ConnectionId, userName});
             await base.OnDisconnectedAsync(exception);

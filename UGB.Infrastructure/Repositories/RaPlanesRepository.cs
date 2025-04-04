@@ -1,6 +1,6 @@
-using UGB.Application.Data;
 using UGB.Domain.Entities;
 using UGB.Domain.Interfaces;
+using UGB.Infrastructure.Interfaces;
 
 namespace UGB.Infrastructure.Repositories
 {

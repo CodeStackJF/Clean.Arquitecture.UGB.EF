@@ -1,11 +1,10 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using UGB.Application.Data;
-using UGB.Application.DTO;
 using UGB.Domain.Wrapper;
 using UGB.Domain.Entities;
 using UGB.Domain.Interfaces;
+using UGB.Infrastructure.Interfaces;
 
 namespace UGB.Infrastructure.Repositories
 {
