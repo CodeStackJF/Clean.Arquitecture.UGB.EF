@@ -1,19 +1,13 @@
 using FluentValidation;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UGB.Application.Exceptions;
-using UGB.Application.Helper;
-using UGB.Application.Validations;
 using UGB.Domain.Entities;
 using UGB.Domain.Interfaces;
-using UGB.Domain.Primitives;
 
 namespace UGB.Services.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    //[Authorize(Policy = "HeaderToken")]
-    //[Authorize]
     public class CarrerasController:ControllerBase
     {
         private readonly IRaCarrerasRepository raCarrerasRepository;

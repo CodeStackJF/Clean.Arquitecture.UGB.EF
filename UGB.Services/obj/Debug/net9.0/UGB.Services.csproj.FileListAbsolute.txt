@@ -18,7 +18,6 @@ D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\Microsoft.
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
-D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
 D:\GIT\CSHARP\Clean.Arquitecture.UGB.EF\UGB.Services\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

@@ -1,4 +1,5 @@
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UGB.Application.DTO;
 using UGB.Application.Exceptions;
@@ -9,6 +10,7 @@ namespace UGB.Services.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize(Policy = "HeaderToken")]
     public class EmailController:ControllerBase
     {
         private readonly IEmailService _emailService;
