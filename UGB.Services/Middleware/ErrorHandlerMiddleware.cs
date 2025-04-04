@@ -94,7 +94,10 @@ namespace UGB.Services.Middleware
                     responseModel.StatusCode = response.StatusCode;
                     break;
             }
-            var result = JsonSerializer.Serialize(responseModel);
+
+            JsonSerializerOptions jso = new JsonSerializerOptions();
+            jso.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
+            var result = JsonSerializer.Serialize(responseModel,jso);
 
             if(context.User.Identity!.IsAuthenticated)
             {
@@ -106,7 +109,7 @@ namespace UGB.Services.Middleware
                 http_logs log = new http_logs()
                 {
                     statusCode = response.StatusCode,
-                    request = bodyStream.ReadToEndAsync().Result,
+                    request = bodyStream.ReadToEnd(),
                     response = result,
                     url = context.Request.GetDisplayUrl(),
                     date = DateTime.Now,

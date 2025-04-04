@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.IdentityModel.Tokens;
 using UGB.Application;
 using UGB.Infrastructure;
@@ -81,6 +82,13 @@ public class Program
         builder.Services.AddSignalR(o =>
         {
             o.EnableDetailedErrors = true;
+        });
+
+        builder.Services.Configure<IISServerOptions>(options => {
+            options.AllowSynchronousIO = true;
+        });
+        builder.Services.Configure<KestrelServerOptions>(options => {
+            options.AllowSynchronousIO = true;
         });
 
         var app = builder.Build();
